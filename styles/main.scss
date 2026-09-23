@@ -1,0 +1,37 @@
+// ============================================
+// main.scss — single entry point
+// Compiles to styles/main.css
+//
+// Import order matters (cascade/specificity):
+// base → layout → components → pages
+// ============================================
+
+// ---- Base ----
+@use 'base/variables' as *;
+@use 'base/mixins' as *;
+@use 'base/fonts';
+@use 'base/reset';
+
+// ---- Layout ----
+@use 'layout/header';
+@use 'layout/hero';
+// @use 'layout/footer';
+// @use 'layout/grid';
+
+// ---- Components ----
+// @use 'components/buttons';
+// @use 'components/cards';
+// @use 'components/nav';
+
+// ---- Pages ----
+// @use 'pages/home';
+
+// Global page container used across sections
+.container {
+  @include container;
+}
+
+body {
+  background-color: $color-dark;
+  font-family: $font-MPLUS1;
+}

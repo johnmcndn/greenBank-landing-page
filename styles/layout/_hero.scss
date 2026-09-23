@@ -1,0 +1,73 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+main {
+  .site-hero {
+    padding-top: size(128);
+    .container {
+      @include flex(space-between, center, size(32));
+      .heroContent {
+        @include flex(flex-start, flex-start, size(31));
+        flex-direction: column;
+        width: 100%;
+        h1 {
+          font-size: size(56);
+          font-weight: bold;
+          color: $color-white;
+          letter-spacing: -0.025em;
+          line-height: 1.143;
+        }
+        .heroDescription {
+          font-size: size(18);
+          color: $color-grey;
+          max-width: size(498);
+          line-height: 1.5;
+        }
+        .btnGetStarted {
+          @include flex(flex-start, center, size(16));
+          padding: size(16) size(32);
+          border-radius: size(64);
+          background-color: $color-highlights;
+          color: $color-white;
+          font-size: size(16);
+          font-weight: 500;
+          cursor: pointer;
+          img {
+            width: size(22.5);
+            height: size(16.5);
+          }
+        }
+        .usersActive {
+          @include flex(flex-start, center, size(16));
+          .usersProfile {
+            display: flex;
+            img {
+              width: size(48);
+              height: size(48);
+              object-fit: cover;
+              // border: 2px solid #fff;
+              // border-radius: 50%;
+              &:not(:first-child) {
+                margin-left: size(-12);
+              }
+            }
+          }
+          .userDesc {
+            font-weight: bold;
+            color: $color-white;
+            span {
+              display: block;
+              font-size: size(12);
+              font-weight: 400;
+              color: $color-grey;
+            }
+          }
+        }
+      }
+      .heroVisual {
+        width: 100%;
+        border: 2px solid red;
+      }
+    }
+  }
+}

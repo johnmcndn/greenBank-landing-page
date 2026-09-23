@@ -1,0 +1,90 @@
+// // ============================================
+// // Mixins
+// // ============================================
+
+@use 'sass:math';
+@use 'variables' as *;
+
+// ---- px → rem conversion ----
+// Paste the raw px value straight from Figma: font-size: size(56);
+// Assumes a 16px root font-size (matches html { font-size: 100% } in _reset.scss).
+@function size($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// // ---- Responsive breakpoints (mobile-first: min-width) ----
+// @mixin respond($breakpoint) {
+//   @if $breakpoint == sm {
+//     @media (min-width: $breakpoint-sm) { @content; }
+//   } @else if $breakpoint == md {
+//     @media (min-width: $breakpoint-md) { @content; }
+//   } @else if $breakpoint == lg {
+//     @media (min-width: $breakpoint-lg) { @content; }
+//   } @else if $breakpoint == xl {
+//     @media (min-width: $breakpoint-xl) { @content; }
+//   } @else {
+//     @warn "Unknown breakpoint: #{$breakpoint}";
+//   }
+// }
+
+// // ---- Centered max-width container ----
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+}
+
+// ---- Flex row helper ----
+@mixin flex($justify: flex-start, $align: center, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// // ---- Neon glow ring, used behind the credit-card art and hero blobs ----
+// @mixin glow($color: $color-primary-glow, $spread: 80px) {
+//   box-shadow: 0 0 #{$spread} #{$color};
+// }
+
+// // ---- Pill button base (Get Started / Contact / Create New Card) ----
+// @mixin button-base {
+//   display: inline-flex;
+//   align-items: center;
+//   gap: $space-1;
+//   padding: $space-1 $space-3;
+//   border-radius: $radius-pill;
+//   font-family: $font-body;
+//   font-weight: $fw-medium;
+//   font-size: $fs-small;
+//   border: 1px solid transparent;
+//   cursor: pointer;
+//   transition: background-color $transition-fast, border-color $transition-fast, transform $transition-fast;
+
+//   &:focus-visible {
+//     outline: 2px solid $color-primary;
+//     outline-offset: 2px;
+//   }
+// }
+
+// // ---- Visually hidden (a11y) ----
+// @mixin visually-hidden {
+//   position: absolute;
+//   width: 1px;
+//   height: 1px;
+//   padding: 0;
+//   margin: -1px;
+//   overflow: hidden;
+//   clip: rect(0, 0, 0, 0);
+//   white-space: nowrap;
+//   border: 0;
+// }
+
+// // ---- Respect reduced motion ----
+// @mixin motion-safe {
+//   @media (prefers-reduced-motion: no-preference) {
+//     @content;
+//   }
+// }

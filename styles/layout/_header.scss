@@ -1,0 +1,26 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.site-header {
+  padding-top: 32px;
+  .container {
+    @include flex(space-between, center);
+
+    nav {
+      ul {
+        @include flex(flex-start, center, 32px);
+        > li a {
+          color: $color-white;
+        }
+      }
+    }
+
+    .btn {
+      color: $color-highlights;
+      font-weight: bold;
+      border: 2px solid $color-highlights;
+      border-radius: $radius-pill;
+      padding: 12px 32px;
+    }
+  }
+}
