@@ -12,20 +12,28 @@
   @return math.div($px, $base) * 1rem;
 }
 
-// // ---- Responsive breakpoints (mobile-first: min-width) ----
-// @mixin respond($breakpoint) {
-//   @if $breakpoint == sm {
-//     @media (min-width: $breakpoint-sm) { @content; }
-//   } @else if $breakpoint == md {
-//     @media (min-width: $breakpoint-md) { @content; }
-//   } @else if $breakpoint == lg {
-//     @media (min-width: $breakpoint-lg) { @content; }
-//   } @else if $breakpoint == xl {
-//     @media (min-width: $breakpoint-xl) { @content; }
-//   } @else {
-//     @warn "Unknown breakpoint: #{$breakpoint}";
-//   }
-// }
+// ---- Responsive breakpoints (mobile-first: min-width) ----
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
 
 // // ---- Centered max-width container ----
 @mixin container {

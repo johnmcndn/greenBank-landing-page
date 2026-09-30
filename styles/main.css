@@ -396,6 +396,43 @@ main .site-hero .container .heroVisual .circleImg {
   right: -10rem;
   bottom: 0;
 }
+main .site-about {
+  padding-top: 8rem;
+}
+main .site-about .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: rgba(61, 84, 77, 0.24);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+@media (min-width: 768px) {
+  main .site-about .container {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 4rem;
+  }
+}
+main .site-about .container .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 17.375rem;
+  height: 5.5rem;
+}
+main .site-about .container .wrapper .num {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02rem;
+  line-height: 1.4;
+}
+main .site-about .container .wrapper .title {
+  font-size: 1rem;
+  color: #2bb32a;
+}
 
 .container {
   width: 100%;
