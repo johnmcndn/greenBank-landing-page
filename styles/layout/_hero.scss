@@ -4,8 +4,11 @@
 main {
   .site-hero {
     padding-top: size(128);
+
     .container {
-      @include flex(space-between, center, size(32));
+      @include flex(space-between, flex-start, size(32));
+      height: size(539);
+      overflow: visible;
       .heroContent {
         @include flex(flex-start, flex-start, size(31));
         flex-direction: column;
@@ -65,14 +68,20 @@ main {
         }
       }
       .heroVisual {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
         .creditCard {
           position: relative;
           width: size(551.3);
           height: size(348.19);
           border-radius: size(32);
+          margin: size(63) 0 0 size(17);
 
           padding: size(37.72) size(34.42) size(36.27) size(55.13);
           box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+          transform: rotate(15deg);
 
           &::before {
             content: '';
@@ -138,6 +147,9 @@ main {
                 font-size: size(32);
                 font-weight: 700;
                 color: $color-white;
+                span:not(:first-child) {
+                  margin-left: size(20);
+                }
               }
             }
             .thirdRow {
@@ -174,14 +186,15 @@ main {
                 width: size(58.43);
                 height: size(46.43);
               }
-              .circleImg {
-                position: absolute;
-                z-index: -5;
-                left: size(250);
-                top: size(-259);
-              }
             }
           }
+        }
+        .circleImg {
+          width: size(492);
+          position: absolute;
+          z-index: -5;
+          right: size(-160);
+          bottom: 0;
         }
       }
     }

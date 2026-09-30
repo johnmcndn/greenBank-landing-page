@@ -211,8 +211,10 @@ main .site-hero {
 main .site-hero .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
+  height: 33.6875rem;
+  overflow: visible;
 }
 main .site-hero .container .heroContent {
   display: flex;
@@ -279,13 +281,20 @@ main .site-hero .container .heroContent .usersActive .userDesc span {
   font-weight: 400;
   color: #adb2b1;
 }
+main .site-hero .container .heroVisual {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
 main .site-hero .container .heroVisual .creditCard {
   position: relative;
   width: 34.45625rem;
   height: 21.761875rem;
   border-radius: 2rem;
+  margin: 3.9375rem 0 0 1.0625rem;
   padding: 2.3575rem 2.15125rem 2.266875rem 3.445625rem;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+  transform: rotate(15deg);
 }
 main .site-hero .container .heroVisual .creditCard::before {
   content: "";
@@ -344,6 +353,9 @@ main .site-hero .container .heroVisual .creditCard .wrapper .secondRow .number {
   font-weight: 700;
   color: #ffffff;
 }
+main .site-hero .container .heroVisual .creditCard .wrapper .secondRow .number span:not(:first-child) {
+  margin-left: 1.25rem;
+}
 main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow {
   position: relative;
   display: flex;
@@ -377,11 +389,12 @@ main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow .creditCar
   width: 3.651875rem;
   height: 2.901875rem;
 }
-main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow .circleImg {
+main .site-hero .container .heroVisual .circleImg {
+  width: 30.75rem;
   position: absolute;
   z-index: -5;
-  left: 15.625rem;
-  top: -16.1875rem;
+  right: -10rem;
+  bottom: 0;
 }
 
 .container {
