@@ -12,7 +12,7 @@ main {
         width: 100%;
         h1 {
           font-size: size(56);
-          font-weight: bold;
+          font-weight: $fw-bold;
           color: $color-white;
           letter-spacing: -0.025em;
           line-height: 1.143;
@@ -30,7 +30,7 @@ main {
           background-color: $color-highlights;
           color: $color-white;
           font-size: size(16);
-          font-weight: 500;
+          font-weight: $fw-medium;
           cursor: pointer;
           img {
             width: size(22.5);
@@ -53,20 +53,136 @@ main {
             }
           }
           .userDesc {
-            font-weight: bold;
+            font-weight: $fw-bold;
             color: $color-white;
             span {
               display: block;
               font-size: size(12);
-              font-weight: 400;
+              font-weight: $fw-regular;
               color: $color-grey;
             }
           }
         }
       }
       .heroVisual {
-        width: 100%;
-        border: 2px solid red;
+        .creditCard {
+          position: relative;
+          width: size(551.3);
+          height: size(348.19);
+          border-radius: size(32);
+
+          padding: size(37.72) size(34.42) size(36.27) size(55.13);
+          box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+
+          &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: size(2);
+            background: linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(255, 255, 255, 0.55) 100%
+            );
+            -webkit-mask:
+              linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask:
+              linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.5;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 0.37) 0%,
+              rgba(255, 255, 255, 0) 100%
+            ); // ← added: Rectangle 1's Fill, 37% baked into the alpha directly
+            pointer-events: none;
+            backdrop-filter: blur(size(40));
+            -webkit-backdrop-filter: blur(size(40));
+            z-index: -1;
+          }
+          .wrapper {
+            width: 100%;
+            height: 100%;
+            .firstRow {
+              @include flex(space-between, flex-start);
+              img:first-child {
+                width: size(58.37);
+                height: size(34.82);
+              }
+              img:last-child {
+                width: size(25.32);
+                height: size(46.43);
+              }
+            }
+            .secondRow {
+              padding-top: size(38);
+              .text {
+                font-size: size(14);
+                color: $color-grey1;
+                font-weight: 600;
+              }
+              .number {
+                font-family: $font-MPLUS1CODE;
+                padding-top: size(13);
+                font-size: size(32);
+                font-weight: 700;
+                color: $color-white;
+              }
+            }
+            .thirdRow {
+              position: relative;
+              @include flex(space-between, center);
+              height: 107px;
+
+              .cardMeta {
+                width: size(233.58);
+                display: flex;
+                flex-direction: column;
+                gap: size(12); // vertical space between the two rows
+
+                &__row {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                }
+
+                .label {
+                  font-size: size(14);
+                  color: $color-grey1;
+                  font-weight: 600;
+                }
+
+                .value {
+                  font-size: size(12);
+                  font-weight: 500;
+                  color: $color-white;
+                }
+              }
+              .creditCardImg {
+                align-self: end;
+                width: size(58.43);
+                height: size(46.43);
+              }
+              .circleImg {
+                position: absolute;
+                z-index: -5;
+                left: size(250);
+                top: size(-259);
+              }
+            }
+          }
+        }
       }
     }
   }

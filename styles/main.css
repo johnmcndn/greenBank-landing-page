@@ -61,6 +61,55 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "M PLUS 1 Code";
+  src: url("../assets/fonts/m-plus-1/MPLUS1-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "M PLUS 1 Code";
+  src: url("../assets/fonts/m-plus-1/MPLUS1-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "M PLUS 1 Code";
+  src: url("../assets/fonts/m-plus-1/MPLUS1-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "M PLUS 1 Code";
+  src: url("../assets/fonts/m-plus-1/MPLUS1-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "M PLUS 1 Code";
+  src: url("../assets/fonts/m-plus-1/MPLUS1-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "M PLUS 1 Code";
+  src: url("../assets/fonts/m-plus-1/MPLUS1-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "M PLUS 1 Code";
+  src: url("../assets/fonts/m-plus-1-code/MPLUS1Code-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 *,
 *::before,
 *::after {
@@ -175,7 +224,7 @@ main .site-hero .container .heroContent {
 }
 main .site-hero .container .heroContent h1 {
   font-size: 3.5rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.025em;
   line-height: 1.143;
@@ -221,7 +270,7 @@ main .site-hero .container .heroContent .usersActive .usersProfile img:not(:firs
   margin-left: -0.75rem;
 }
 main .site-hero .container .heroContent .usersActive .userDesc {
-  font-weight: bold;
+  font-weight: 700;
   color: #ffffff;
 }
 main .site-hero .container .heroContent .usersActive .userDesc span {
@@ -230,9 +279,109 @@ main .site-hero .container .heroContent .usersActive .userDesc span {
   font-weight: 400;
   color: #adb2b1;
 }
-main .site-hero .container .heroVisual {
+main .site-hero .container .heroVisual .creditCard {
+  position: relative;
+  width: 34.45625rem;
+  height: 21.761875rem;
+  border-radius: 2rem;
+  padding: 2.3575rem 2.15125rem 2.266875rem 3.445625rem;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+}
+main .site-hero .container .heroVisual .creditCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 0.125rem;
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.55) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
+}
+main .site-hero .container .heroVisual .creditCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.37) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  backdrop-filter: blur(2.5rem);
+  -webkit-backdrop-filter: blur(2.5rem);
+  z-index: -1;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper {
   width: 100%;
-  border: 2px solid red;
+  height: 100%;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .firstRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .firstRow img:first-child {
+  width: 3.648125rem;
+  height: 2.17625rem;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .firstRow img:last-child {
+  width: 1.5825rem;
+  height: 2.901875rem;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .secondRow {
+  padding-top: 2.375rem;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .secondRow .text {
+  font-size: 0.875rem;
+  color: #b9bebd;
+  font-weight: 600;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .secondRow .number {
+  font-family: "M PLUS 1 Code", monospace;
+  padding-top: 0.8125rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 107px;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow .cardMeta {
+  width: 14.59875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow .cardMeta__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow .cardMeta .label {
+  font-size: 0.875rem;
+  color: #b9bebd;
+  font-weight: 600;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow .cardMeta .value {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow .creditCardImg {
+  align-self: end;
+  width: 3.651875rem;
+  height: 2.901875rem;
+}
+main .site-hero .container .heroVisual .creditCard .wrapper .thirdRow .circleImg {
+  position: absolute;
+  z-index: -5;
+  left: 15.625rem;
+  top: -16.1875rem;
 }
 
 .container {
