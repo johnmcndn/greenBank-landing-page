@@ -236,4 +236,13 @@ main {
       }
     }
   }
+  .site-logoSlider {
+    padding-top: size(128);
+    .container {
+      @include flex(space-between, center);
+      > img {
+        height: size(32);
+      }
+    }
+  }
 }

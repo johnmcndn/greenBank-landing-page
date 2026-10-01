@@ -433,6 +433,17 @@ main .site-about .container .wrapper .title {
   font-size: 1rem;
   color: #2bb32a;
 }
+main .site-logoSlider {
+  padding-top: 8rem;
+}
+main .site-logoSlider .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .site-logoSlider .container > img {
+  height: 2rem;
+}
 
 .container {
   width: 100%;
