@@ -181,7 +181,7 @@ table {
   }
 }
 .site-header {
-  padding-top: 32px;
+  padding-top: 2rem;
 }
 .site-header .container {
   display: flex;
@@ -192,7 +192,7 @@ table {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 32px;
+  gap: 2rem;
 }
 .site-header .container nav ul > li a {
   color: #ffffff;
@@ -202,7 +202,7 @@ table {
   font-weight: bold;
   border: 2px solid #2bb32a;
   border-radius: 999px;
-  padding: 12px 32px;
+  padding: 0.75rem 2rem;
 }
 
 main .site-hero {
@@ -396,6 +396,7 @@ main .site-hero .container .heroVisual .circleImg {
   right: -10rem;
   bottom: 0;
 }
+
 main .site-about {
   padding-top: 8rem;
 }
@@ -433,6 +434,7 @@ main .site-about .container .wrapper .title {
   font-size: 1rem;
   color: #2bb32a;
 }
+
 main .site-logoSlider {
   padding-top: 8rem;
 }
@@ -443,6 +445,43 @@ main .site-logoSlider .container {
 }
 main .site-logoSlider .container > img {
   height: 2rem;
+}
+
+main .site-feature {
+  padding-top: 8rem;
+}
+main .site-feature .container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+main .site-feature .container .featureList {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+main .site-feature .container .featureList .featureCard {
+  display: flex;
+  gap: 1.5rem;
+}
+main .site-feature .container .featureList .featureCard__icon {
+  height: 4rem;
+}
+main .site-feature .container .featureList .featureCard__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main .site-feature .container .featureList .featureCard__content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+main .site-feature .container .featureList .featureCard__content p {
+  color: #adb2b1;
 }
 
 .container {

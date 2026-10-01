@@ -1,0 +1,42 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+main {
+  .site-about {
+    padding-top: size(128);
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); // mobile: 2x2
+      background-color: rgba(61, 84, 77, 0.24);
+      border-radius: size(24);
+      padding: size(32);
+
+      @include respond(md) {
+        grid-template-columns: repeat(4, 1fr); // desktop: single row of 4
+        padding: size(64);
+      }
+
+      .wrapper {
+        @include flex(center, center, size(8));
+        flex-direction: column;
+        gap: size(8);
+        max-width: size(278);
+        height: size(88);
+
+        .num {
+          font-size: size(48);
+          font-weight: $fw-bold;
+          color: $color-white;
+          letter-spacing: size(-0.32);
+          line-height: 1.4;
+        }
+
+        .title {
+          font-size: size(16);
+          color: $color-highlights;
+        }
+      }
+    }
+  }
+}

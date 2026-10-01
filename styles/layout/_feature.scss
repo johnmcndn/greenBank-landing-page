@@ -1,0 +1,41 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+main {
+  .site-feature {
+    padding-top: size(128);
+    .container {
+      h2 {
+        font-size: size(40);
+        font-weight: $fw-bold;
+        color: $color-white;
+        text-align: center;
+      }
+      .featureList {
+        @include flex(space-between, flex-start, size(32));
+        margin-top: size(64);
+        .featureCard {
+          display: flex;
+          gap: size(24);
+
+          &__icon {
+            height: size(64);
+          }
+          &__content {
+            display: flex;
+            flex-direction: column;
+            gap: size(8);
+            h3 {
+              font-size: size(24);
+              font-weight: $fw-medium;
+              color: $color-white;
+            }
+            p {
+              color: $color-grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}

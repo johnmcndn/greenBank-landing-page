@@ -2,13 +2,13 @@
 @use '../base/mixins' as *;
 
 .site-header {
-  padding-top: 32px;
+  padding-top: size(32);
   .container {
     @include flex(space-between, center);
 
     nav {
       ul {
-        @include flex(flex-start, center, 32px);
+        @include flex(flex-start, center, size(32));
         > li a {
           color: $color-white;
         }
@@ -20,7 +20,7 @@
       font-weight: bold;
       border: 2px solid $color-highlights;
       border-radius: $radius-pill;
-      padding: 12px 32px;
+      padding: size(12) size(32);
     }
   }
 }
